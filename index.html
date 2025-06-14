@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+</head>
+
+<body>
+    <!-- index.html -->
+    <button onclick="handleLogin()">Login with Google</button>
+
+    <script type="module">
+        import { loginWithGoogle } from './src/scripts/firebase.js';
+        window.handleLogin = loginWithGoogle;
+    </script>
+
+</body>
+
+</html>

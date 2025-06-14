@@ -1,0 +1,24 @@
+{
+  "name": "grid",
+  "version": "1.0.0",
+  "description": "a project for the grid",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/envolta-som/Grid.git"
+  },
+  "author": "Somnath K",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/envolta-som/Grid/issues"
+  },
+  "homepage": "https://github.com/envolta-som/Grid#readme",
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  },
+  "dependencies": {
+    "firebase": "^11.9.1"
+  }
+}
