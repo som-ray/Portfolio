@@ -1,0 +1,274 @@
+.hero {
+    grid-column: center-start / center-end;
+    background-color: rgb(51, 49, 49);
+    height: 96vh;
+
+    position: relative;
+
+
+    &__content {
+        position: relative;
+        height: 100%;
+        z-index: 10;
+        display: grid;
+        grid-template-columns: 1fr 15rem 1fr;
+        grid-template-rows: 1fr min-content 1fr;
+        color: #fff;
+        align-items: center;
+    }
+
+    &__heading {
+        grid-area: 2 / 1 / 3 / 2;
+        justify-self: end;
+        align-items: center;
+        padding-right: 3rem;
+        font-size: 3.6rem;
+        font-weight: 600;
+
+    }
+
+    &__subheading {
+        grid-area: 2 / 3 / 3 / 4;
+        justify-self: start;
+        align-items: center;
+        padding-left: 3rem;
+        font-size: 3.6rem;
+        font-weight: 600;
+    }
+
+
+    &__cta {
+        color: #0b2659;
+        cursor: pointer;
+        z-index: 0;
+        background-color: #fff;
+        border-radius: 10rem;
+        grid-area: 2 / 2 / 3 / 3;
+        place-self: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 25rem;
+        padding: .4rem 1rem .4rem 2rem;
+        font-weight: 800;
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s;
+        box-shadow: 0 4px 12px rgba(11, 38, 89, 0.3);
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(120deg,
+                    rgba(255, 255, 255, 0.2) 0%,
+                    rgba(255, 255, 255, 0.6) 50%,
+                    rgba(255, 255, 255, 0.2) 100%);
+            transform: skewX(-20deg);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        &:hover::before {
+            animation: shine 0.9s ease-out forwards;
+        }
+
+        & i {
+            font-size: 2.4rem;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+
+    &__animation {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
+    &__animation__container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+
+    &__bg-spread {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 1000px;
+        height: 1000px;
+        border-radius: 50%;
+        background: linear-gradient(90deg, #0b2659 0%, rgb(52 103 216) 100%);
+        transform: translate(-50%, -50%) scale(0);
+        animation: bgSpread 1.2s ease-out forwards;
+        animation-delay: 1s;
+        z-index: 0;
+    }
+
+    &__circle {
+        width: 100px;
+        height: 100px;
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        animation: zoomFadeOnce 1s ease-in-out forwards;
+        z-index: 2;
+    }
+
+    &__ring {
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+        z-index: 1;
+
+        &--1 {
+            width: 14rem;
+            height: 14rem;
+            animation: ringAnim 1s ease-in-out forwards;
+            animation-delay: 1s;
+        }
+
+        &--2 {
+            width: 17rem;
+            height: 17rem;
+            animation: ringAnim 1s ease-in-out forwards;
+            animation-delay: 1.1s;
+        }
+
+        &--3 {
+            width: 20rem;
+            height: 20rem;
+            animation: ringAnim 1s ease-in-out forwards;
+            animation-delay: 1.2s;
+        }
+    }
+
+    &__pointer {
+        width: 100rem;
+        height: 100rem;
+        border-radius: 6rem;
+        position: absolute;
+        top: 50%;
+        opacity: 0;
+        transform-origin: 0% 0%;
+        animation: pointerShapeIn 0.6s ease-out forwards;
+        animation-delay: 1.3s;
+
+        &--up {
+            left: 40%;
+            background-color: rgb(0, 225, 255);
+            transform: rotate(-40deg);
+        }
+
+        &--down {
+            left: 42.5%;
+            background: linear-gradient(-45deg, rgb(11 38 89), #364fc7);
+            transform: rotate(-50deg);
+            animation-name: pointerShapeInDown;
+        }
+    }
+}
+
+@keyframes pointerShapeIn {
+    0% {
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotate(-45deg);
+        opacity: 1;
+        background-color: transparent;
+    }
+}
+
+@keyframes pointerShapeInDown {
+    0% {
+        transform: rotate(-55deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotate(-45deg);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomFadeOnce {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+
+    90% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes ringAnim {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+
+    80% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes bgSpread {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 1;
+    }
+}
+
+@keyframes shine {
+    0% {
+        left: -75%;
+    }
+
+    100% {
+        left: 125%;
+    }
+}

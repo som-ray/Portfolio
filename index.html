@@ -4,18 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles/main.scss">
     <title>Grid</title>
 </head>
 
-<body>
-    <!-- index.html -->
-    <button onclick="handleLogin()">Login with Google</button>
+<body class="container">
+    <section class="hero">
+        <div class="hero__animation">
+            <div class="hero__animation__container">
+                <div class="hero__bg-spread"></div>
+                <div class="hero__circle"></div>
 
-    <script type="module">
-        import { loginWithGoogle } from './src/scripts/firebase.js';
-        window.handleLogin = loginWithGoogle;
-    </script>
+                <div class="hero__ring hero__ring--1"></div>
+                <div class="hero__ring hero__ring--2"></div>
+                <div class="hero__ring hero__ring--3"></div>
 
+                <div class="hero__pointer hero__pointer--up"></div>
+                <div class="hero__pointer hero__pointer--down"></div>
+            </div>
+        </div>
+
+        <div class="hero__content">
+            <h1 class="hero__heading">
+                Lorem ipsum.
+            </h1>
+            <button class="hero__cta">
+                Collaborate <i class="bi bi-arrow-right-circle-fill"></i>
+            </button>
+
+            <div class="hero__subheading">
+                dolor sit amet
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="./src/index.js"></script>
 </body>
 
 </html>

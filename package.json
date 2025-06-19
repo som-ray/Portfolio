@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "a project for the grid",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "parcel index.html"
   },
   "repository": {
     "type": "git",
@@ -16,9 +17,11 @@
   },
   "homepage": "https://github.com/envolta-som/Grid#readme",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.15.2",
     "parcel": "^2.15.2"
   },
   "dependencies": {
+    "bootstrap-icons": "^1.13.1",
     "firebase": "^11.9.1"
   }
 }
