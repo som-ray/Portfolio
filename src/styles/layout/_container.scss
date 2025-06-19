@@ -4,4 +4,6 @@
     display: grid;
     grid-template-columns:
         [full-start] 1fr [center-start] repeat(8, [col-start] minmax(0, 15rem)) [center-end] 1fr [full-end];
+
+    overflow-y: scroll;
 }

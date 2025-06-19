@@ -59,6 +59,7 @@ button {
   max-width: 124rem;
   margin: 0 auto;
   display: grid;
+  overflow-y: scroll;
 }
 
 .hero {
@@ -320,5 +321,12 @@ button {
   100% {
     left: 125%;
   }
+}
+
+.workexp {
+  background-color: red;
+  grid-column: center-start / center-end;
+  height: 20px;
+  padding: 6.2rem;
 }
 /*# sourceMappingURL=Grid.971c2ea4.css.map */
